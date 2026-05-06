@@ -225,8 +225,12 @@ function tick() {
     }
 
     // Camera
-    const homePos = new THREE.Vector3(0, 18, 15);
-    const revealPos = new THREE.Vector3(0, 8, 10);
+    const aspect = window.innerWidth / window.innerHeight;
+    const isPortrait = aspect < 1;
+    
+    const homePos = isPortrait ? new THREE.Vector3(0, 25, 22) : new THREE.Vector3(0, 18, 15);
+    const revealPos = isPortrait ? new THREE.Vector3(0, 12, 14) : new THREE.Vector3(0, 8, 10);
+    
     if (threeState.reveal) {
         camera.position.lerp(revealPos, 0.06);
         camera.lookAt(0, 0, 0);
@@ -377,33 +381,33 @@ const App = () => {
             ))}
 
             {/* Bottom Left Exit Button */}
-            <div className="absolute bottom-10 left-10 pointer-events-auto">
+            <div className="absolute bottom-6 md:bottom-10 left-4 md:left-10 pointer-events-auto">
                 <button
                     onClick={() => setGameState('setup')}
-                    className="player-select-btn !w-24 !h-16 !text-lg !m-0"
+                    className="player-select-btn !w-16 !h-10 md:!w-24 md:!h-16 !text-xs md:!text-lg !m-0"
                 >
                     EXIT
                 </button>
             </div>
 
             {/* Bottom Right Point Table Button */}
-            <div className="absolute bottom-10 right-10 pointer-events-auto">
+            <div className="absolute bottom-6 md:bottom-10 right-4 md:right-10 pointer-events-auto">
                 <button
                     onClick={() => setShowScorecard(true)}
-                    className="btn-secondary !bg-black/60 hover:!bg-white hover:!text-black transition-all border-white/20 hover:border-white shadow-xl"
+                    className="btn-secondary !bg-black/60 hover:!bg-white hover:!text-black transition-all border-white/20 hover:border-white shadow-xl text-xs md:text-base py-2 px-4 md:py-3 md:px-6"
                 >
                     POINT TABLE
                 </button>
             </div>
 
             {/* Bottom Controls */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-auto">
-                <div className="flex gap-4 mb-8">
+            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-auto w-full px-4">
+                <div className="flex gap-2 md:gap-4 mb-4 md:mb-8 dice-container justify-center">
                     {diceValues.map((v, i) => (
                         <div
                             key={i}
                             onClick={() => toggleHold(i)}
-                            className={`w-16 h-16 rounded-2xl flex items-center justify-center font-black text-3xl cursor-pointer transition-all border-2
+                            className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center font-black text-2xl md:text-3xl cursor-pointer transition-all border-2 dice-item
                                 ${held[i] ? 'bg-white text-black border-white shadow-[0_0_20px_#fff]' : 'bg-black/40 text-white border-white/20 hover:border-white/50'}
                             `}
                         >
@@ -412,7 +416,7 @@ const App = () => {
                     ))}
                 </div>
 
-                <div className="flex items-center gap-10">
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
                     <div className="flex flex-col items-center">
                         <span className="text-[10px] font-black text-white/30 uppercase tracking-widest mb-2">Rolls: {rollsLeft}/3</span>
                         <div className="flex gap-1.5">
@@ -422,13 +426,13 @@ const App = () => {
                         </div>
                     </div>
 
-                    <div className="flex gap-4">
-                        <button disabled={rollsLeft === 0 || isRolling} onClick={rollDice} className="btn-primary min-w-[180px]">
+                    <div className="flex gap-3 md:gap-4">
+                        <button disabled={rollsLeft === 0 || isRolling} onClick={rollDice} className="btn-primary min-w-[140px] md:min-w-[180px]">
                             {isRolling ? 'Rolling...' : 'Roll Dice'}
                         </button>
 
                         {rollsLeft < 3 && !isRolling && (
-                            <button onClick={() => setShowScorecard(true)} className="btn-secondary animate-fadeIn">
+                            <button onClick={() => setShowScorecard(true)} className="btn-secondary animate-fadeIn text-sm md:text-base">
                                 Select Point
                             </button>
                         )}
@@ -440,12 +444,12 @@ const App = () => {
             {showScorecard && (
                 <div className="modal-overlay" onClick={() => setShowScorecard(false)}>
                     <div className="glass-panel" onClick={e => e.stopPropagation()}>
-                        <div className="flex justify-between items-center mb-12">
+                        <div className="flex justify-between items-center mb-6 md:mb-12">
                             <div>
-                                <h2 className="text-6xl font-black uppercase tracking-tighter" style={{ background: 'linear-gradient(to bottom, #fff, #999)', webkitBackgroundClip: 'text', webkitTextFillColor: 'transparent' }}>Scorecard</h2>
-                                <p className="text-white/40 uppercase tracking-widest font-bold mt-2">Select a category to confirm your points</p>
+                                <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter" style={{ background: 'linear-gradient(to bottom, #fff, #999)', webkitBackgroundClip: 'text', webkitTextFillColor: 'transparent' }}>Scorecard</h2>
+                                <p className="text-[10px] md:text-sm text-white/40 uppercase tracking-widest font-bold mt-1 md:mt-2">Select a category to confirm points</p>
                             </div>
-                            <button onClick={() => setShowScorecard(false)} className="w-16 h-16 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/40 hover:text-white text-3xl transition-all border border-white/10">✕</button>
+                            <button onClick={() => setShowScorecard(false)} className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/40 hover:text-white text-xl md:text-3xl transition-all border border-white/10">✕</button>
                         </div>
 
                         <div className="score-grid custom-scrollbar">

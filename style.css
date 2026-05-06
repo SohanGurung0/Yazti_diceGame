@@ -323,3 +323,80 @@ body {
 .winner-container {
     background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 4rem;
+        letter-spacing: -2px;
+    }
+    
+    .btn-primary {
+        padding: 12px 24px;
+        font-size: 1.2rem;
+    }
+
+    .glass-panel {
+        padding: 1.5rem !important;
+    }
+
+    .score-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .score-item {
+        padding: 1.25rem;
+    }
+
+    .score-item .text-5xl {
+        font-size: 2.5rem;
+    }
+
+    .corner-hud {
+        padding: 0.5rem;
+    }
+
+    .player-card {
+        min-width: 80px;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .player-card .text-2xl {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .score-item .text-2xl {
+        font-size: 1.1rem;
+    }
+
+    .score-item .text-5xl {
+        font-size: 2rem;
+    }
+
+    .score-item .scale-150 {
+        transform: scale(1.2);
+    }
+    
+    .btn-primary {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Adjust bottom controls for very small screens */
+    .dice-container {
+        gap: 0.5rem !important;
+    }
+
+    .dice-item {
+        width: 3.5rem !important;
+        height: 3.5rem !important;
+        font-size: 1.5rem !important;
+    }
+}
