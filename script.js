@@ -381,61 +381,63 @@ const App = () => {
             ))}
 
             {/* Bottom Left Exit Button */}
-            <div className="absolute bottom-6 md:bottom-10 left-4 md:left-10 pointer-events-auto">
+            <div className="absolute bottom-6 md:bottom-10 left-4 md:left-10 pointer-events-auto z-30">
                 <button
                     onClick={() => setGameState('setup')}
-                    className="player-select-btn !w-16 !h-10 md:!w-24 md:!h-16 !text-xs md:!text-lg !m-0"
+                    className="btn-hud !px-6 !py-3 !text-sm md:!text-base"
                 >
                     EXIT
                 </button>
             </div>
 
             {/* Bottom Right Point Table Button */}
-            <div className="absolute bottom-6 md:bottom-10 right-4 md:right-10 pointer-events-auto">
+            <div className="absolute bottom-6 md:bottom-10 right-4 md:right-10 pointer-events-auto z-30">
                 <button
                     onClick={() => setShowScorecard(true)}
-                    className="btn-secondary !bg-black/60 hover:!bg-white hover:!text-black transition-all border-white/20 hover:border-white shadow-xl text-xs md:text-base py-2 px-4 md:py-3 md:px-6"
+                    className="btn-hud !px-6 !py-3 !text-sm md:!text-base"
                 >
                     POINT TABLE
                 </button>
             </div>
 
             {/* Bottom Controls */}
-            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-auto w-full px-4">
-                <div className="flex gap-2 md:gap-4 mb-4 md:mb-8 dice-container justify-center">
-                    {diceValues.map((v, i) => (
-                        <div
-                            key={i}
-                            onClick={() => toggleHold(i)}
-                            className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center font-black text-2xl md:text-3xl cursor-pointer transition-all border-2 dice-item
-                                ${held[i] ? 'bg-white text-black border-white shadow-[0_0_20px_#fff]' : 'bg-black/40 text-white border-white/20 hover:border-white/50'}
-                            `}
-                        >
-                            {v}
-                        </div>
-                    ))}
-                </div>
-
-                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                    <div className="flex flex-col items-center">
-                        <span className="text-[10px] font-black text-white/30 uppercase tracking-widest mb-2">Rolls: {rollsLeft}/3</span>
-                        <div className="flex gap-1.5">
-                            {[1, 2, 3].map(r => (
-                                <div key={r} className={`w-2.5 h-2.5 rounded-full ${r <= rollsLeft ? 'bg-accent-green' : 'bg-white/10'}`}></div>
-                            ))}
-                        </div>
+            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none w-full px-4 z-20">
+                <div className="pointer-events-auto flex flex-col items-center">
+                    <div className="flex gap-2 md:gap-4 mb-4 md:mb-8 dice-container justify-center">
+                        {diceValues.map((v, i) => (
+                            <div
+                                key={i}
+                                onClick={() => toggleHold(i)}
+                                className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center font-black text-2xl md:text-3xl cursor-pointer transition-all border-2 dice-item
+                                    ${held[i] ? 'bg-white text-black border-white shadow-[0_0_20px_#fff]' : 'bg-black/40 text-white border-white/20 hover:border-white/50'}
+                                `}
+                            >
+                                {v}
+                            </div>
+                        ))}
                     </div>
 
-                    <div className="flex gap-3 md:gap-4">
-                        <button disabled={rollsLeft === 0 || isRolling} onClick={rollDice} className="btn-primary min-w-[140px] md:min-w-[180px]">
-                            {isRolling ? 'Rolling...' : 'Roll Dice'}
-                        </button>
+                    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                        <div className="flex flex-col items-center">
+                            <span className="text-[10px] font-black text-white/30 uppercase tracking-widest mb-2">Rolls: {rollsLeft}/3</span>
+                            <div className="flex gap-1.5">
+                                {[1, 2, 3].map(r => (
+                                    <div key={r} className={`w-2.5 h-2.5 rounded-full ${r <= rollsLeft ? 'bg-accent-green' : 'bg-white/10'}`}></div>
+                                ))}
+                            </div>
+                        </div>
 
-                        {rollsLeft < 3 && !isRolling && (
-                            <button onClick={() => setShowScorecard(true)} className="btn-secondary animate-fadeIn text-sm md:text-base">
-                                Select Point
+                        <div className="flex gap-3 md:gap-4">
+                            <button disabled={rollsLeft === 0 || isRolling} onClick={rollDice} className="btn-primary min-w-[140px] md:min-w-[180px]">
+                                {isRolling ? 'Rolling...' : 'Roll Dice'}
                             </button>
-                        )}
+
+                            {rollsLeft < 3 && !isRolling && (
+                                <button onClick={() => setShowScorecard(true)} className="btn-secondary animate-fadeIn text-sm md:text-base">
+                                    Select Point
+                                </button>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

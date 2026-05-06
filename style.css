@@ -206,7 +206,6 @@ body {
     user-select: none;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     margin: 0 10px;
-    /* Ensure no gaps or tight spacing */
 }
 
 .player-select-btn:hover {
@@ -232,7 +231,6 @@ body {
     left: 2px;
     right: 2px;
     bottom: 12px;
-    /* Fixed gap here by adjusting bottom */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
     border-radius: 10px;
     pointer-events: none;
@@ -242,7 +240,6 @@ body {
 .btn-primary {
     background: linear-gradient(to bottom, #ffffff 0%, #cccccc 100%);
     color: #000;
-    /* Contrast with white button */
     font-weight: 900;
     padding: 16px 40px;
     border-radius: 12px;
@@ -284,6 +281,36 @@ body {
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-hud {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    padding: 12px 24px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-hud:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.btn-hud:active {
+    transform: translateY(1px);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* Animations */

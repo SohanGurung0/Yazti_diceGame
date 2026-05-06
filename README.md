@@ -43,4 +43,4 @@ The game is designed to scale beautifully across all devices:
 - **Single-Column Scorecard**: Categorized points are stacked for better readability on narrow screens.
 
 ---
-Created with ❤️ by Antigravity.
+by SohanGurung0
