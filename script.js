@@ -380,28 +380,29 @@ const App = () => {
                 </div>
             ))}
 
-            {/* Bottom Left Exit Button */}
-            <div className="absolute bottom-6 md:bottom-10 left-4 md:left-10 pointer-events-auto z-30">
-                <button
-                    onClick={() => setGameState('setup')}
-                    className="btn-hud !px-6 !py-3 !text-sm md:!text-base"
-                >
-                    EXIT
-                </button>
-            </div>
-
-            {/* Bottom Right Point Table Button */}
-            <div className="absolute bottom-6 md:bottom-10 right-4 md:right-10 pointer-events-auto z-30">
-                <button
-                    onClick={() => setShowScorecard(true)}
-                    className="btn-hud !px-6 !py-3 !text-sm md:!text-base"
-                >
-                    POINT TABLE
-                </button>
-            </div>
 
             {/* Bottom Controls */}
-            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none w-full px-4 pb-6 z-20">                <div className="pointer-events-auto flex flex-col items-center">
+            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none w-full px-4 pb-6 z-20">
+                {/* Bottom Left Exit Button */}
+                <div className="absolute bottom-6 md:bottom-10 left-4 md:left-10 pointer-events-auto z-30">
+                    <button
+                        onClick={() => setGameState('setup')}
+                        className="btn-hud !px-6 !py-3 !text-sm md:!text-base"
+                    >
+                        EXIT
+                    </button>
+                </div>
+
+                {/* Bottom Right Point Table Button */}
+                <div className="absolute bottom-6 md:bottom-10 right-4 md:right-10 pointer-events-auto z-30">
+                    <button
+                        onClick={() => setShowScorecard(true)}
+                        className="btn-hud !px-6 !py-3 !text-sm md:!text-base"
+                    >
+                        POINT TABLE
+                    </button>
+                </div>
+                <div className="pointer-events-auto flex flex-col items-center">
                     <div className="flex gap-2 md:gap-4 mb-4 md:mb-8 dice-container justify-center">
                         {diceValues.map((v, i) => (
                             <div
@@ -416,7 +417,7 @@ const App = () => {
                         ))}
                     </div>
 
-                    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 ">
                         <div className="flex flex-col items-center">
                             <span className="text-[10px] font-black text-white/30 uppercase tracking-widest mb-2">Rolls: {rollsLeft}/3</span>
                             <div className="flex gap-1.5">
