@@ -401,8 +401,7 @@ const App = () => {
             </div>
 
             {/* Bottom Controls */}
-            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none w-full px-4 z-20">
-                <div className="pointer-events-auto flex flex-col items-center">
+            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none w-full px-4 pb-6 z-20">                <div className="pointer-events-auto flex flex-col items-center">
                     <div className="flex gap-2 md:gap-4 mb-4 md:mb-8 dice-container justify-center">
                         {diceValues.map((v, i) => (
                             <div
