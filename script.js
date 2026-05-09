@@ -387,9 +387,10 @@ const App = () => {
                 <div className="absolute bottom-6 md:bottom-10 left-4 md:left-10 pointer-events-auto z-30">
                     <button
                         onClick={() => setGameState('setup')}
-                        className="btn-hud !px-6 !py-3 !text-sm md:!text-base"
+                        className="btn-hud exit-btn !px-6 !py-3 !text-sm md:!text-base"
                     >
-                        EXIT
+                        <span className="btn-text-full">EXIT</span>
+                        <span className="btn-text-icon hidden">✕</span>
                     </button>
                 </div>
 
@@ -397,11 +398,13 @@ const App = () => {
                 <div className="absolute bottom-6 md:bottom-10 right-4 md:right-10 pointer-events-auto z-30">
                     <button
                         onClick={() => setShowScorecard(true)}
-                        className="btn-hud !px-6 !py-3 !text-sm md:!text-base"
+                        className="btn-hud point-table-btn !px-6 !py-3 !text-sm md:!text-base"
                     >
-                        POINT TABLE
+                        <span className="btn-text-full">POINT TABLE</span>
+                        <span className="btn-text-icon hidden">P.T</span>
                     </button>
                 </div>
+
                 <div className="pointer-events-auto flex flex-col items-center">
                     <div className="flex gap-2 md:gap-4 mb-4 md:mb-8 dice-container justify-center">
                         {diceValues.map((v, i) => (
