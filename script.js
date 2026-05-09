@@ -37,9 +37,9 @@ const CATEGORIES = [
 
 const PLAYER_COLORS = [
     { id: 'p1', name: 'Player 1', hex: '#ff4757', posClass: 'top-left' },
-    { id: 'p2', name: 'Player 2', hex: '#1e90ff', posClass: 'top-right' },
-    { id: 'p3', name: 'Player 3', hex: '#ffa502', posClass: 'bottom-left' },
-    { id: 'p4', name: 'Player 4', hex: '#00d2d3', posClass: 'bottom-right' }
+    { id: 'p2', name: 'Player 2', hex: '#1e90ff', posClass: 'top-right' }
+    /* { id: 'p3', name: 'Player 3', hex: '#ffa502', posClass: 'bottom-left' },
+    { id: 'p4', name: 'Player 4', hex: '#00d2d3', posClass: 'bottom-right' }*/
 ];
 
 const getCounts = (dice) => {
