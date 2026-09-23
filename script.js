@@ -349,7 +349,7 @@ const App = () => {
     if (gameState === 'setup') return (
         <div className="home-container animate-fadeIn flex flex-col justify-between py-20">
             <div className="mt-10">
-                <h1 className="hero-title mb-0">YAHTZEE</h1>
+                <h1 className="hero-title mb-0">Play YAHTZEE</h1>
                 <p className="text-dim uppercase tracking-widest font-black mt-4">2-Player Edition</p>
             </div>
             <div className="flex flex-col gap-4 items-center mb-10">

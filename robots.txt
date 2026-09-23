@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block common junk paths that don't exist but get probed
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /admin/
+Disallow: /.env
+Disallow: /config/
+
+Sitemap: https://yahtzee.sohangrg.me/sitemap.xml
