@@ -1,60 +1,988 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yahtzee</title>
-
+    <meta name="msvalidate.01" content="AACF04BE1215EF1FDA8923FE9D3B9350" />
     <!-- React & ReactDOM -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/objects/Reflector.js"></script>
 
-    <!-- Babel for JSX (Used for the script.js which contains JSX) -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- ============================================================
+         PRIMARY SEO METADATA
+    ============================================================ -->
+    <title>Play Yahtzee Online Free – No Download</title>
+    <meta name="description"
+          content="Play Yahtzee online for free in your browser. Roll five dice, complete all 13 scoring categories, and try to beat your best score. No download required." />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yahtzee.sohangrg.me/" />
 
-    <!-- Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-    <!-- gsc -->
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+
+    <!-- ============================================================
+         OPEN GRAPH
+    ============================================================ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yahtzee.sohangrg.me/" />
+    <meta property="og:title" content="Play Yahtzee Online Free – No Download" />
+    <meta property="og:description"
+          content="Play Yahtzee online for free in your browser. Roll five dice, complete all 13 scoring categories, and try to beat your best score. No download required." />
+    <meta property="og:image" content="../image/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Yahtzee online game — 3D dice on a dark game board" />
+    <meta property="og:site_name" content="Yahtzee Online" />
+    <meta property="og:locale" content="en_US" />
+
+
+    <!-- ============================================================
+         TWITTER / X CARD
+    ============================================================ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Play Yahtzee Online Free – No Download" />
+    <meta name="twitter:description"
+          content="Play Yahtzee online for free in your browser. Roll five dice, complete all 13 scoring categories, and try to beat your best score. No download required." />
+    <meta name="twitter:image" content="https://yahtzee.sohangrg.me/og-image.png" />
+    <meta name="twitter:image:alt" content="Yahtzee online game — 3D dice on a dark game board" />
+
+
+    <!-- Emoji favicon -->
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>" />
+
+
+    <!-- ============================================================
+         PERFORMANCE: Resource hints
+    ============================================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+
+    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="jlaRsrR7FT_ZspSsRV4Evflk391juHhhAU7bEXfrBME" />
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
-    <canvas id="sceneCanvas"></canvas>
-    <div id="root" class="relative z-10 w-full min-h-screen flex justify-center pointer-events-none">
-        <div id="loading"
-            style="color: white; font-family: sans-serif; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100;">
-            Loading...</div>
-    </div>
 
-    <script>
-        window.onerror = function (msg, url, line, col, error) {
-            var extra = !col ? '' : '\ncolumn: ' + col;
-            extra += !error ? '' : '\nerror: ' + error;
-            console.log("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
-            var errDiv = document.createElement('div');
-            errDiv.style = "position:fixed;top:0;left:0;width:100%;background:rgba(255,0,0,0.8);color:white;padding:20px;z-index:10000;font-family:monospace;";
-            errDiv.innerText = "CRITICAL ERROR: " + msg + " at " + line + ":" + col;
-            document.body.appendChild(errDiv);
-            return false;
-        };
+    <!-- ============================================================
+         STRUCTURED DATA — WebSite + WebApplication (JSON-LD)
+    ============================================================ -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": "https://yahtzee.sohangrg.me/#website",
+                    "url": "https://yahtzee.sohangrg.me/",
+                    "name": "Yahtzee Online",
+                    "description": "Play the classic Yahtzee dice game for free in your browser. No download required.",
+                    "inLanguage": "en-US"
+                },
+                {
+                    "@type": "WebApplication",
+                    "@id": "https://yahtzee.sohangrg.me/#app",
+                    "name": "Play Yahtzee Online Free",
+                    "url": "https://yahtzee.sohangrg.me/",
+                    "description": "A free browser-based Yahtzee game. Roll five 3D dice, complete all 13 scoring categories, and challenge a friend. No download or installation required.",
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "Any (browser-based)",
+                    "browserRequirements": "Requires JavaScript. Works in Chrome, Firefox, Safari, and Edge.",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "USD"
+                    },
+                    "inLanguage": "en-US",
+                    "isPartOf": { "@id": "https://yahtzee.sohangrg.me/#website" }
+                }
+            ]
+        }
     </script>
 
-    <!-- Main Game Script (Type text/babel because it contains JSX) -->
-    <script type="text/babel" src="script.js"></script>
-</body>
 
+    <!-- Google Fonts -->
+    <link rel="preload" as="style"
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet" />
+
+
+    <!-- Tailwind CSS (needed by game components once loaded) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Game's custom styles -->
+    <link rel="stylesheet" href="style.css" />
+
+
+    <!-- ============================================================
+         ALL STYLES — landing page + SEO content
+         Game styles come from style.css above
+    ============================================================ -->
+    <style>
+        /* ── Base ── */
+        html { scroll-behavior: smooth; }
+
+
+        body {
+            margin: 0;
+            background: #000;
+            font-family: 'Outfit', sans-serif;
+            color: #fff;
+            /* Landing page is scrollable; game overrides this on launch */
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+
+        /* When game is active, body becomes fixed/no-scroll */
+        body.game-active {
+            overflow: hidden;
+        }
+
+
+        /* ── LANDING HERO SECTION ── */
+        #landing {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 1.5rem 4rem;
+            position: relative;
+            background: radial-gradient(ellipse at 50% 40%, #111 0%, #000 70%);
+        }
+
+
+        /* Subtle animated background dots */
+        #landing::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                    radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+
+        .landing-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 100px;
+            padding: 0.35rem 1rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2rem;
+        }
+
+
+        .landing-dice-row {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+            /* gentle float animation */
+            animation: float 4s ease-in-out infinite;
+        }
+
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-8px); }
+        }
+
+
+        #landing h1 {
+            font-size: clamp(2.6rem, 8vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: -3px;
+            line-height: 1;
+            background: linear-gradient(160deg, #ffffff 0%, #888888 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 1.5rem;
+        }
+
+
+        #landing .landing-desc {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255,255,255,0.5);
+            max-width: 520px;
+            line-height: 1.7;
+            margin: 0 auto 2.5rem;
+        }
+
+
+        /* Feature pills */
+        .feature-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .pill {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            padding: 0.3rem 0.85rem;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.45);
+            font-weight: 600;
+        }
+
+
+        /* ── START BUTTON ── */
+        #start-btn {
+            position: relative;
+            background: linear-gradient(to bottom, #ffffff 0%, #d0d0d0 100%);
+            color: #000;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 1.1rem 3rem;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow:
+                    0 8px 0 #888,
+                    0 16px 30px rgba(0,0,0,0.5),
+                    inset 0 1px 1px rgba(255,255,255,0.6);
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            min-width: 220px;
+        }
+
+
+        #start-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow:
+                    0 10px 0 #888,
+                    0 22px 40px rgba(0,0,0,0.6),
+                    inset 0 1px 1px rgba(255,255,255,0.6);
+        }
+
+
+        #start-btn:active:not(:disabled) {
+            transform: translateY(6px);
+            box-shadow:
+                    0 2px 0 #888,
+                    0 6px 12px rgba(0,0,0,0.4);
+        }
+
+
+        #start-btn:disabled {
+            cursor: wait;
+            opacity: 0.7;
+        }
+
+
+        .btn-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(0,0,0,0.25);
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+
+        .scroll-hint {
+            margin-top: 3rem;
+            color: rgba(255,255,255,0.2);
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .scroll-hint a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .scroll-hint a:hover { color: rgba(255,255,255,0.5); }
+
+
+        /* Error state */
+        #load-error {
+            display: none;
+            margin-top: 1rem;
+            color: #ff4757;
+            font-size: 0.9rem;
+        }
+
+
+        /* ── GAME LAYER (hidden until launched) ── */
+        #sceneCanvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            display: none; /* shown on game launch */
+            z-index: 1;
+        }
+
+
+        #root {
+            display: none; /* shown on game launch */
+            position: fixed;
+            top: 0; left: 0;
+            z-index: 2;
+            width: 100vw; height: 100vh;
+            pointer-events: none;
+        }
+
+
+        /* ── BELOW-FOLD SEO CONTENT ── */
+        #seo-content {
+            position: relative;
+            z-index: 3;
+            background: #0a0a0a;
+            color: rgba(255,255,255,0.82);
+            font-family: 'Outfit', sans-serif;
+            padding: 5rem 1.5rem 3rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+
+        #seo-content .seo-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+
+        #seo-content h2 {
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 900;
+            color: #fff;
+            margin: 3rem 0 1rem;
+            letter-spacing: -0.5px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 2.5rem;
+        }
+
+
+        #seo-content h2:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+
+        #seo-content p {
+            line-height: 1.75;
+            margin: 0 0 1rem;
+            color: rgba(255,255,255,0.72);
+        }
+
+
+        #seo-content ul,
+        #seo-content ol {
+            padding-left: 1.5rem;
+            margin: 0 0 1rem;
+        }
+
+
+        #seo-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.72);
+        }
+
+
+        #seo-content strong { color: #fff; }
+
+
+        /* Scoring table */
+        .scoring-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.25rem 0;
+            font-size: 0.92rem;
+        }
+
+
+        .scoring-table thead tr {
+            background: rgba(255,255,255,0.07);
+        }
+
+
+        .scoring-table th {
+            text-align: left;
+            padding: 0.65rem 1rem;
+            font-weight: 700;
+            color: #fff;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+
+        .scoring-table td {
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.75);
+            vertical-align: top;
+        }
+
+
+        .scoring-table tr:last-child td { border-bottom: none; }
+        .scoring-table tr:hover td { background: rgba(255,255,255,0.04); }
+
+
+        .score-val {
+            white-space: nowrap;
+            font-weight: 700;
+            color: #2ed573;
+        }
+
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            padding: 1.25rem 0;
+        }
+
+
+        .faq-item:last-child { border-bottom: none; }
+
+
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 0.5rem;
+        }
+
+
+        .faq-item p {
+            margin: 0;
+            font-size: 0.92rem;
+        }
+
+
+        /* Footer */
+        #site-footer {
+            background: #000;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.3);
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+
+        #site-footer a {
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+        }
+
+
+        #site-footer a:hover { color: #fff; }
+
+
+        /* ── TRANSITIONS ── */
+        #landing-page {
+            position: relative;
+            z-index: 10;
+            background: #000;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        #landing-page.launching {
+            opacity: 0;
+            transform: scale(0.98);
+            pointer-events: none;
+        }
+
+
+        /* When game is active, hide entire landing/SEO layer completely */
+        body.game-active #landing-page,
+        body.game-active #landing,
+        body.game-active #seo-content,
+        body.game-active #site-footer {
+            display: none !important;
+        }
+
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            #landing h1 { letter-spacing: -1.5px; }
+            #start-btn { width: 100%; max-width: 300px; }
+            .feature-pills { gap: 0.4rem; }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================================================================
+     VISUALLY-HIDDEN SITE HEADER (landmark for screen readers/crawlers)
+================================================================ -->
+<header style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
+    <nav aria-label="Site navigation">
+        <a href="https://yahtzee.sohangrg.me/">Play Yahtzee Online Free</a>
+    </nav>
+</header>
+
+
+<!-- ================================================================
+     THREE.JS CANVAS — hidden until Start Playing is clicked
+================================================================ -->
+<canvas id="sceneCanvas" aria-hidden="true"></canvas>
+
+
+<!-- ================================================================
+     REACT ROOT — hidden until Start Playing is clicked
+================================================================ -->
+<div id="root" class="relative z-10 w-full min-h-screen flex justify-center pointer-events-none" aria-label="Yahtzee game"></div>
+
+
+<!-- ================================================================
+     LANDING & SEO PAGE (Hero + How to Play + Scoring Guide + Footer)
+     Visible initially to crawlers and users; hidden when game starts.
+================================================================ -->
+<main id="landing-page">
+
+
+    <!-- ============================================================
+         LANDING HERO
+    ============================================================ -->
+    <section id="landing" aria-label="Yahtzee online game">
+
+
+        <div class="landing-badge">🎲 Free Browser Game</div>
+
+
+        <div class="landing-dice-row" aria-hidden="true">⚀ ⚁ ⚂ ⚃ ⚄ ⚅</div>
+
+
+        <h1>Play Yahtzee<br>Online Free</h1>
+
+
+        <p class="landing-desc">
+            Play the classic Yahtzee dice game directly in your browser.
+            Roll five dice, keep the ones you want, and fill all 13 scoring
+            categories to beat your highest score. No download required.
+        </p>
+
+
+        <div class="feature-pills" role="list" aria-label="Game features">
+            <span class="pill" role="listitem">🎲 3D Dice</span>
+            <span class="pill" role="listitem">👥 2 Players</span>
+            <span class="pill" role="listitem">📱 Mobile Friendly</span>
+            <span class="pill" role="listitem">💸 100% Free</span>
+            <span class="pill" role="listitem">⚡ No Download</span>
+        </div>
+
+
+        <button id="start-btn" onclick="startPlaying()" aria-label="Start playing Yahtzee">
+            Start Playing 🎲
+        </button>
+
+
+        <p id="load-error" role="alert" aria-live="assertive"></p>
+
+
+        <p class="scroll-hint">
+            <a href="#seo-content">↓ How to play &amp; scoring guide</a>
+        </p>
+
+
+    </section>
+
+
+    <!-- ================================================================
+         BELOW-FOLD SEO CONTENT
+         Visible on the landing page (users scroll to it).
+         Search engines index this immediately in the initial HTML.
+    ================================================================ -->
+    <article id="seo-content" aria-label="Yahtzee guide">
+        <div class="seo-inner">
+
+
+            <h2>How to Play Yahtzee</h2>
+            <p>Yahtzee is a classic dice game played with five dice. Each turn follows the same three-step structure:</p>
+            <ol>
+                <li><strong>Roll all five dice.</strong> You start each turn with up to three rolls.</li>
+                <li><strong>Keep the dice you want.</strong> After the first or second roll, click any die to hold
+                    it — held dice are not re-rolled.</li>
+                <li><strong>Score your roll.</strong> Open the scorecard and choose a category that fits your dice.
+                    Each category can only be used once per game.</li>
+            </ol>
+            <p>The game ends when all 13 scoring categories are filled. The player with the highest total wins.</p>
+
+
+            <h2>Yahtzee Scoring</h2>
+            <p>There are 13 scoring categories in two sections. Score <strong>63 or more</strong> in the Upper
+                Section to earn a <strong>35-point bonus</strong>.</p>
+
+
+            <table class="scoring-table">
+                <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>How to Score</th>
+                    <th>Points</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="3"
+                        style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:0.85rem 1rem 0.4rem;text-transform:uppercase;">
+                        Upper Section</td>
+                </tr>
+                <tr>
+                    <td><strong>Ones</strong></td>
+                    <td>Sum of all 1s</td>
+                    <td class="score-val">1–5 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Twos</strong></td>
+                    <td>Sum of all 2s</td>
+                    <td class="score-val">2–10 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Threes</strong></td>
+                    <td>Sum of all 3s</td>
+                    <td class="score-val">3–15 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Fours</strong></td>
+                    <td>Sum of all 4s</td>
+                    <td class="score-val">4–20 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Fives</strong></td>
+                    <td>Sum of all 5s</td>
+                    <td class="score-val">5–25 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Sixes</strong></td>
+                    <td>Sum of all 6s</td>
+                    <td class="score-val">6–30 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Upper Bonus</strong></td>
+                    <td>Score ≥ 63 in Upper Section</td>
+                    <td class="score-val">+35 pts</td>
+                </tr>
+                <tr>
+                    <td colspan="3"
+                        style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:0.85rem 1rem 0.4rem;text-transform:uppercase;">
+                        Lower Section</td>
+                </tr>
+                <tr>
+                    <td><strong>Three of a Kind</strong></td>
+                    <td>At least three dice the same</td>
+                    <td class="score-val">Sum of all dice</td>
+                </tr>
+                <tr>
+                    <td><strong>Four of a Kind</strong></td>
+                    <td>At least four dice the same</td>
+                    <td class="score-val">Sum of all dice</td>
+                </tr>
+                <tr>
+                    <td><strong>Full House</strong></td>
+                    <td>Three of one + two of another</td>
+                    <td class="score-val">25 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Small Straight</strong></td>
+                    <td>Four sequential dice (e.g., 1-2-3-4)</td>
+                    <td class="score-val">30 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Large Straight</strong></td>
+                    <td>Five sequential dice (e.g., 2-3-4-5-6)</td>
+                    <td class="score-val">40 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Yahtzee</strong></td>
+                    <td>All five dice the same</td>
+                    <td class="score-val">50 pts</td>
+                </tr>
+                <tr>
+                    <td><strong>Chance</strong></td>
+                    <td>Any combination — sum of all dice</td>
+                    <td class="score-val">Sum of all dice</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <h2>Tips for Getting a Higher Yahtzee Score</h2>
+            <ul>
+                <li><strong>Aim for the upper bonus early.</strong> You need roughly three of each number to reach
+                    63. Prioritise Sixes and Fives first — they score the most per die.</li>
+                <li><strong>Don't waste Chance too early.</strong> It accepts any roll, making it a useful
+                    safety net when nothing else fits. Save it for late in the game.</li>
+                <li><strong>Hold pairs aggressively on roll one.</strong> A pair gives you a foundation for Three
+                    of a Kind, Four of a Kind, Full House, or Yahtzee on subsequent rolls.</li>
+                <li><strong>Know when to sacrifice a category.</strong> If you have no good options, score a zero
+                    in Ones or Twos rather than burning a high-value lower-section slot.</li>
+                <li><strong>Watch your opponent's scorecard.</strong> In 2-player mode, knowing which categories
+                    your opponent still needs can influence which dice you chase.</li>
+            </ul>
+
+
+            <h2>About This Online Yahtzee Game</h2>
+            <p>This is a free, browser-based Yahtzee game built with React and Three.js. It features
+                high-fidelity 3D dice with realistic animation, a reflective floor, and smooth camera
+                movements.</p>
+            <ul>
+                <li><strong>Free to play</strong> — no account, no purchase, no ads.</li>
+                <li><strong>No download required</strong> — runs entirely in your web browser.</li>
+                <li><strong>2-player local multiplayer</strong> — take turns on the same device.</li>
+                <li><strong>Mobile compatible</strong> — layout and controls adapt to phones and tablets.
+                    Portrait mode adjusts the 3D camera for a top-down view.</li>
+                <li><strong>Live score preview</strong> — the scorecard shows how many points each category
+                    would earn with your current roll before you commit.</li>
+                <li><strong>Confetti celebrations</strong> — the winner gets a proper send-off.</li>
+            </ul>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <div class="faq-item">
+                <h3>Can I play Yahtzee online for free?</h3>
+                <p>Yes. This game is completely free — no sign-up, no in-app purchases, and no ads.</p>
+            </div>
+
+
+            <div class="faq-item">
+                <h3>How many dice are used in Yahtzee?</h3>
+                <p>Yahtzee uses <strong>five dice</strong>. All five are rolled at the start of each turn and you
+                    can hold any number between rolls.</p>
+            </div>
+
+
+            <div class="faq-item">
+                <h3>How many rolls do you get per turn in Yahtzee?</h3>
+                <p>You get <strong>up to three rolls</strong> per turn. You can stop and score after the first or
+                    second roll if you're happy with the result.</p>
+            </div>
+
+
+            <div class="faq-item">
+                <h3>How much is a Yahtzee worth?</h3>
+                <p>A Yahtzee — all five dice showing the same number — scores <strong>50 points</strong>.</p>
+            </div>
+
+
+            <div class="faq-item">
+                <h3>What is the upper-section bonus?</h3>
+                <p>Score <strong>63 or more</strong> in the Upper Section (Ones through Sixes) to earn a
+                    <strong>35-point bonus</strong>. This roughly means averaging three of each number.</p>
+            </div>
+
+
+            <div class="faq-item">
+                <h3>Does the game work on mobile?</h3>
+                <p>Yes. The game is responsive and works on phones and tablets. The 3D camera automatically
+                    adjusts for portrait orientation and all buttons are sized for touch input.</p>
+            </div>
+
+
+        </div><!-- /.seo-inner -->
+    </article>
+
+
+    <!-- ============================================================
+         SITE FOOTER
+    ============================================================ -->
+    <footer id="site-footer">
+        <p>
+            <a href="https://yahtzee.sohangrg.me/">Play Yahtzee Online Free</a>
+            &nbsp;·&nbsp; Free browser game &nbsp;·&nbsp; No download required
+        </p>
+        <p style="margin-top:0.5rem;">
+            Built by <a href="https://yahtzee.sohangrg.me/" rel="author">SohanGurung0</a>
+        </p>
+    </footer>
+
+
+</main>
+
+
+<!-- ================================================================
+     GLOBAL ERROR HANDLER
+================================================================ -->
+<script>
+    window.onerror = function (msg, url, line, col, error) {
+        var extra = !col ? '' : '\ncolumn: ' + col;
+        extra += !error ? '' : '\nerror: ' + error;
+        console.log('Error: ' + msg + '\nurl: ' + url + '\nline: ' + line + extra);
+        return false;
+    };
+</script>
+
+
+<!-- ================================================================
+     GAME LOADER
+     Scripts are only fetched and executed when the user clicks
+     "Start Playing". This keeps initial page load fast and clean.
+================================================================ -->
+<script>
+    /**
+     * Dynamically inject a <script src="..."> and wait for it to load.
+     */
+    function loadScript(src) {
+        return new Promise(function (resolve, reject) {
+            var s = document.createElement('script');
+            s.src = src;
+            s.crossOrigin = 'anonymous';
+            s.onload = resolve;
+            s.onerror = function () {
+                reject(new Error('Failed to load: ' + src));
+            };
+            document.head.appendChild(s);
+        });
+    }
+
+
+
+    /**
+    * Called when the user clicks "Start Playing".
+    * Loads all game dependencies then runs the JSX via Babel.
+    */
+    async function startPlaying() {
+    var btn = document.getElementById('start-btn');
+    var errEl = document.getElementById('load-error');
+    var landingPage = document.getElementById('landing-page');
+
+
+    // Update button to loading state
+    btn.disabled = true;
+    btn.innerHTML = '<span class="btn-spinner"></span>Loading…';
+    errEl.style.display = 'none';
+
+
+    try {
+    // ── Step 1: Load game dependencies in dependency order ──
+    await loadScript('https://unpkg.com/react@18/umd/react.production.min.js');
+    await loadScript('https://unpkg.com/react-dom@18/umd/react-dom.production.min.js');
+    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
+    await loadScript('https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/objects/Reflector.js');
+    await loadScript('https://unpkg.com/@babel/standalone/babel.min.js');
+    await loadScript('https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js');
+
+
+    // ── Step 2: Fetch script.js, transform JSX, execute ──
+    var jsxSource;
+    try {
+    var response = await fetch('script.js');
+    if (response.ok) jsxSource = await response.text();
+    } catch (e) {
+    // Fallback to XHR (e.g. file:// protocol)
+    }
+    if (!jsxSource) {
+    jsxSource = await new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'script.js', true);
+    xhr.onload = function () {
+    if (xhr.status === 200 || xhr.status === 0) resolve(xhr.responseText);
+    else reject(new Error('Failed to load script.js (' + xhr.status + ')'));
+    };
+    xhr.onerror = function () { reject(new Error('Failed to load script.js')); };
+    xhr.send();
+    });
+    }
+
+
+    var compiled = Babel.transform(jsxSource, {
+    presets: ['react'],
+    filename: 'script.js'
+    }).code;
+
+
+    // ── Step 3: Reveal game layers ──
+    var canvas = document.getElementById('sceneCanvas');
+    var root   = document.getElementById('root');
+
+
+    canvas.style.display = 'block';
+    root.style.display   = 'flex';
+    root.style.pointerEvents = 'auto';
+
+
+    // Lock body scroll (game is fullscreen)
+    document.body.classList.add('game-active');
+
+
+    // Scroll to top so the game canvas fills the viewport
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+
+    // Fade out the entire landing page
+    if (landingPage) {
+    landingPage.classList.add('launching');
+    }
+
+
+    // ── Step 4: Run the game ──
+    // eslint-disable-next-line no-eval
+    eval(compiled);
+
+
+    // Ensure Three.js canvas size matches window dimensions
+    window.dispatchEvent(new Event('resize'));
+
+
+    // Hide landing page completely after fade
+    setTimeout(function () {
+    if (landingPage) landingPage.style.display = 'none';
+    }, 450);
+
+
+    } catch (err) {
+    console.error('Game load failed:', err);
+    btn.disabled = false;
+    btn.innerHTML = 'Try Again 🎲';
+    errEl.textContent = 'Something went wrong. Check your connection and try again.';
+    errEl.style.display = 'block';
+    }
+    }
+
+
+    // Allow Enter/Space on the button (accessibility)
+    document.addEventListener('keydown', function (e) {
+    if ((e.key === 'Enter' || e.key === ' ') &&
+    document.activeElement &&
+    document.activeElement.id === 'start-btn') {
+    e.preventDefault();
+    startPlaying();
+    }
+    });
+</script>
+
+
+</body>
 </html>
+>>>>>>> aa7c5f8 (SEO for better ranking)
+
