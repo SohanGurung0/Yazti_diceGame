@@ -471,3 +471,44 @@ body {
         display: none;
     }
 }
+
+/* ── Monochrome Mode Selection Buttons (matching Go To Game) ── */
+.btn-mode-select {
+    position: relative;
+    background: linear-gradient(to bottom, #ffffff 0%, #d0d0d0 100%);
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 1.1rem 2.5rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow:
+        0 8px 0 #777,
+        0 16px 30px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    user-select: none;
+}
+
+.btn-mode-select:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 0 #777,
+        0 20px 35px rgba(0, 0, 0, 0.7),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.btn-mode-select:active {
+    transform: translateY(6px);
+    box-shadow:
+        0 2px 0 #777,
+        0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
