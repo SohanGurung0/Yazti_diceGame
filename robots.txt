@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /overview.md
 
 # Block common junk paths that don't exist but get probed
 Disallow: /wp-admin/
@@ -9,3 +12,4 @@ Disallow: /.env
 Disallow: /config/
 
 Sitemap: https://yahtzee.sohangrg.me/sitemap.xml
+

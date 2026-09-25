@@ -1,0 +1,59 @@
+# 3D Yahtzee Online – Office Desk Edition
+
+> Free browser-based 3D Yahtzee dice game featuring Three.js physics, intelligent AI bot opponent, local 2-player pass-and-play multiplayer, and complete 11-category scoring rules with zero downloads or registration.
+
+## Primary Resources
+
+- [AI Overview & Markdown Mirror](https://yahtzee.sohangrg.me/overview.md): Comprehensive markdown mirror of game rules, scoring tables, probability odds, AI bot decision heuristics, and tech stack for AI search agents and LLMs.
+- [Full LLM Context (llms-full.txt)](https://yahtzee.sohangrg.me/llms-full.txt): Complete full-text documentation mirror in plain text format.
+- [Web Application](https://yahtzee.sohangrg.me/): Play the game directly in any modern desktop or mobile browser.
+- [Source Repository](https://github.com/SohanGurung0/Yazti_diceGame): GitHub repository with client-side code and assets.
+
+## Game Summary
+
+- **Title**: Play Yahtzee Online Free – 3D Dice Game (No Download)
+- **URL**: https://yahtzee.sohangrg.me/
+- **Game Type**: Classic 5-dice turn-based board game
+- **Rounds**: 11 turns per player (matching the 11 scoring categories)
+- **Rolls per Turn**: Up to 3 rolls (roll, hold/unhold dice, re-roll remaining)
+- **Modes**:
+  - Solo vs. Smart AI Bot
+  - 2-Player Local Multiplayer (pass-and-play)
+- **Cost**: 100% Free, no downloads, no registration, no advertisements
+
+## Scoring Categories (11 Total)
+
+### Upper Section
+- **Ones**: Sum of dice showing 1 (Score: 1–5 pts)
+- **Twos**: Sum of dice showing 2 (Score: 2–10 pts)
+- **Threes**: Sum of dice showing 3 (Score: 3–15 pts)
+- **Fours**: Sum of dice showing 4 (Score: 4–20 pts)
+- **Fives**: Sum of dice showing 5 (Score: 5–25 pts)
+- **Sixes**: Sum of dice showing 6 (Score: 6–30 pts)
+
+### Lower Section
+- **Three of a Kind**: At least 3 dice matching (Score: Sum of all 5 dice)
+- **Four of a Kind**: At least 4 dice matching (Score: Sum of all 5 dice)
+- **Full House**: Three of one number and two of another (Score: 25 pts)
+- **Straight**: Sequence of 4 consecutive dice (e.g. 1-2-3-4, 2-3-4-5, 3-4-5-6) (Score: 40 pts)
+- **Yahtzee**: All 5 dice matching (Score: 50 pts)
+
+## Bot AI Strategy Overview
+
+The single-player mode uses a heuristic decision engine:
+1. **Immediate Scoring Stops**: Halts rolling early if it secures an unassigned Yahtzee, Straight, or Full House.
+2. **Holding Logic**:
+   - Holds 4-of-a-kind, 3-of-a-kind, or pairs to chase Yahtzee or sets.
+   - Holds 4-dice or 3-dice sequential runs when Straight category is open.
+   - Retains high individual dice (5s, 6s) when targeting the upper section.
+3. **Category Selection**:
+   - Picks maximum scoring category available.
+   - If forced to sacrifice (score zero), prioritizes low upper slots (Ones, Twos) before touching high-scoring lower categories.
+
+## Technical Architecture
+
+- **Rendering Engine**: Three.js (r128) with dynamic perspective/portrait camera and planar Reflector floor.
+- **Frontend Framework**: React 18 (production UMD) with Babel standalone JSX transpilation.
+- **Styling**: Tailwind CSS + custom glassmorphism stylesheet (`style.css`).
+- **Effects**: Canvas Confetti victory animations.
+- **Platform**: 100% client-side, zero backend dependencies, fully mobile-responsive.
